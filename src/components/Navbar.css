@@ -1,0 +1,122 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 78px;
+  background: rgba(255, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(238, 228, 240, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.navbar-container {
+  width: min(1180px, 90%);
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.brand > span:last-child span {
+  color: var(--secondary);
+}
+
+.brand-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  border-radius: 13px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-dark);
+}
+
+.nav-link.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -9px;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 20px;
+}
+
+.navbar-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  border-radius: 12px;
+}
+
+.menu-button {
+  display: none;
+  border: none;
+  color: var(--text-dark);
+  background: transparent;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 850px) {
+  .menu-button {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 78px;
+    right: 0;
+    left: 0;
+    display: none;
+    padding: 24px 5%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-small);
+  }
+
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .navbar-button {
+    justify-content: center;
+  }
+}

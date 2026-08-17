@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #241a30;
+  background: #fffafc;
+
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --secondary: #ec4899;
+  --accent: #f59e0b;
+
+  --text-dark: #241a30;
+  --text-light: #716579;
+
+  --background: #fffafc;
+  --surface: #ffffff;
+  --border: #eee4f0;
+
+  --shadow-small: 0 8px 25px rgba(79, 35, 93, 0.08);
+  --shadow-large: 0 25px 70px rgba(79, 35, 93, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.section-heading span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-bottom: 14px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.primary-button {
+  color: white;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.27);
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(168, 85, 247, 0.35);
+}
+
+.secondary-button {
+  color: var(--primary-dark);
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
